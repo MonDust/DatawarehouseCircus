@@ -1,0 +1,12 @@
+WITH 
+  MEMBER [Measures].[AverageRatingsCountPerMonth] AS 
+    AVG(
+      DESCENDANTS([Date].[Day Hierarchy].CURRENTMEMBER, [Date].[Day Hierarchy].[Month]),
+      [Measures].[Performance Evaluation Count]
+    )
+
+SELECT 
+  {[Measures].[AverageRatingsCountPerMonth]} ON COLUMNS,
+  [Date].[Day Hierarchy].[Year].MEMBERS ON ROWS
+FROM 
+  [Circus DW]

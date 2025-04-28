@@ -1,0 +1,11 @@
+SELECT 
+  TOPCOUNT(
+    {[Performance].[Performance Name].ALLMEMBERS}, 
+    5, 
+    [Measures].[Average Satisfaction]
+  ) ON ROWS,
+  {[Measures].[Average Satisfaction]} ON COLUMNS
+FROM 
+  [Circus DW]
+WHERE 
+  [Date].[Year].&[2012]

@@ -1,0 +1,5 @@
+SELECT 
+    CrossJoin([Performers].[Person Number].Members, [Performers].[Specialization].Members )ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+WHERE [Measures].[Average Satisfaction]

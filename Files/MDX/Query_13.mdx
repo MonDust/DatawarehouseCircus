@@ -1,0 +1,4 @@
+SELECT 
+    {[Measures].[Average Satisfaction],[Measures].[Average Cleanliness], [Measures].[Percentage of participation]} ON COLUMNS,
+    [Performance].[Performance ID].Members ON ROWS
+FROM [Circus DW]

@@ -1,0 +1,146 @@
+WITH 
+  MEMBER [Measures].[AverageTicketSales] AS 
+    AVG([Performance].[Performance Name].ALLMEMBERS, [Measures].[Ticket Acquiring Count])
+
+SELECT 
+  {[Measures].[AverageTicketSales]} ON COLUMNS,
+  [Performance].[Designer].Members ON ROWS
+FROM 
+  [Circus DW]
+
+  ------------------------
+
+  SELECT 
+  TOPCOUNT(
+    {[Performance].[Performance Name].ALLMEMBERS}, 
+    5, 
+    [Measures].[Average Satisfaction]
+  ) ON ROWS,
+  {[Measures].[Average Satisfaction]} ON COLUMNS
+FROM 
+  [Circus DW]
+WHERE 
+  [Date].[Year].&[2012]
+
+  --------------------
+
+  WITH 
+  MEMBER [Measures].[AverageRatingsCountPerMonth] AS 
+    AVG(
+      DESCENDANTS([Date].[Day Hierarchy].CURRENTMEMBER, [Date].[Day Hierarchy].[Month]),
+      [Measures].[Performance Evaluation Count]
+    )
+
+SELECT 
+  {[Measures].[AverageRatingsCountPerMonth]} ON COLUMNS,
+  [Date].[Day Hierarchy].[Year].MEMBERS ON ROWS
+FROM 
+  [Circus DW]
+
+  ------------------
+
+  SELECT {[Measures].[Average Satisfaction]} ON COLUMNS,
+    {[Performers].[Person Number].Members} ON ROWS
+FROM [Circus DW]
+
+----------------------
+
+SELECT {[Measures].[Average Satisfaction]} ON COLUMNS,
+    {[Performance].[Designer].Members} ON ROWS
+FROM [Circus DW]
+
+-------------------
+
+SELECT {[Measures].[Average Cleanliness]} ON COLUMNS,
+    {[Animals].[Species].Members} ON ROWS
+FROM [Circus DW]
+
+---------------------
+
+SELECT 
+    {[Measures].[Average Satisfaction],[Measures].[Average Cleanliness], [Measures].[Percentage of participation]} ON COLUMNS,
+    [Performance].[Performance ID].Members ON ROWS
+FROM [Circus DW]
+
+-------------------
+
+SELECT 
+    [Performers].[Time Of Acceptance].Members ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+WHERE [Measures].[Average Satisfaction]
+
+-------------------------------
+
+SELECT 
+    [Performers].[Person Number].Members ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+WHERE [Measures].[Average Satisfaction]
+
+
+-----------------------------
+
+SELECT 
+    {[Measures].[Average Satisfaction],[Measures].[Average Cleanliness]} ON COLUMNS,
+    {[Animals].[Animal Number].Members} ON ROWS
+FROM [Circus DW]
+
+-------------------------------
+
+SELECT 
+    CrossJoin([Performers].[Person Number].Members, [Performers].[Specialization].Members )ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+WHERE [Measures].[Average Satisfaction]
+
+-------------------------------------------
+
+SELECT 
+    {[Measures].[Percentage of participation]} ON COLUMNS,
+    {[Ticket Type].[Type].Members} ON ROWS
+FROM [Circus DW]
+
+
+-----------------------------
+
+
+SELECT 
+    [Measures].[Percentage of participation] ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+
+-----------------------------
+
+SELECT 
+    [Measures].[Percentage of participation] ON COLUMNS,
+    [Start Date Time].[Time Of Day].Members ON ROWS
+FROM [Circus DW]
+
+
+------------------------
+
+SELECT 
+    {[Measures].[Performance ID Distinct Count - Performance Evaluation 1], [Measures].[Percentage of participation]} ON COLUMNS,
+    [Performance].[Performance Type].Members ON ROWS
+FROM [Circus DW]
+
+----------------------------
+
+SELECT 
+    [Measures].[Percentage of participation] ON COLUMNS,
+    [Seating].[Seat Location].Members ON ROWS
+FROM [Circus DW]
+
+-----------------------------
+
+SELECT 
+    [Measures].[Percentage of participation] ON COLUMNS,
+    [Animals].[Species].Members ON ROWS
+FROM [Circus DW]
+
+
+
+
+
+

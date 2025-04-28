@@ -1,0 +1,4 @@
+SELECT 
+    {[Measures].[Average Satisfaction],[Measures].[Average Cleanliness]} ON COLUMNS,
+    {[Animals].[Animal Number].Members} ON ROWS
+FROM [Circus DW]

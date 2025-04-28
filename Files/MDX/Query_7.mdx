@@ -1,0 +1,4 @@
+SELECT 
+    {[Measures].[Percentage of participation]} ON COLUMNS,
+    {[Ticket Type].[Type].Members} ON ROWS
+FROM [Circus DW]

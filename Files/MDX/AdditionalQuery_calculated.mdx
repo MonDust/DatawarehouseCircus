@@ -1,0 +1,9 @@
+WITH 
+  MEMBER [Measures].[AverageTicketSales] AS 
+    AVG([Performance].[Performance Name].ALLMEMBERS, [Measures].[Ticket Acquiring Count])
+
+SELECT 
+  {[Measures].[AverageTicketSales]} ON COLUMNS,
+  [Performance].[Designer].Members ON ROWS
+FROM 
+  [Circus DW]
