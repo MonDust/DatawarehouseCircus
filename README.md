@@ -1,7 +1,5 @@
-# DatawarehouseCircus
-The project for Data Warehouses course.
-
-The project simulates the design and implementation of a Business Intelligence sysyem for a fictional Circus organization: Hillarity Haeven Circus. It involves full lifecycle development including requirement analysis, data modeling, data generation, ETL processing, OLAP analysis, and Power BI reporting.
+# Data Warehouse Circus - Hilarity Haven
+The project simulates the design and implementation of a Business Intelligence sysyem for a fictional Circus organization: Hilarity Haven Circus. It involves full lifecycle development including requirement analysis, data modeling, data generation, ETL processing, OLAP analysis, and Power BI reporting.
 
 The system enables stakeholders to analyze ticket sales, performance popularity and artist metrics through interactive dashboards.
 
@@ -23,8 +21,9 @@ File: Requirementprocessspecification.pdf
 
 ### Data generator
 Generator of all needed data for both data sources. Special file for generating dates (with holidays).
+Examples of generated data is available at: Example_of_generated_data.pdf
 
-File: 
+Files: 
 
 /python_scripts/data_generator.py
 
@@ -40,5 +39,20 @@ The file contains the checks if the queries defined in Requirementprocessspecifi
 It contains description of data warehouse with its schema.
 
 File: ProjectReport.pdf
+
+### Data Warehouse implementation
+Files:
+Visual studio project in /CircusDW/CircusDW.zip
+Inserting and loading in /Files/Warehouse/ folder:
+- ETL process (all ETL files),
+- example data: Data.sql
+- Relational_table_creation.sql - implementation of schema (and additional creation of auxiliary table (holidays)).
+
+## Information
+The project implemented for Data Warehouses course.
+
+## Author
+O. Paszkiewicz (Mondust)
+2024
   
 
