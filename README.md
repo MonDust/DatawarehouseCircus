@@ -7,8 +7,9 @@ The system enables stakeholders to analyze ticket sales, performance popularity 
 
 ## The files
 ### Project Specification
-Descriptions of:organization, and their two measurable goals,
-- 
+Descriptions of:
+- organization, and their two measurable goals,
+
 ### Project Process Specification
 Descriptions of:
 - organization, and their two measurable goals,
