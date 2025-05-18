@@ -1,7 +1,7 @@
 # Data Warehouse Circus - Hilarity Haven
-The project simulates the design and implementation of a Business Intelligence sysyem for a fictional Circus organization: Hilarity Haven Circus. It involves full lifecycle development including requirement analysis, data modeling, data generation, ETL processing, OLAP analysis, and Power BI reporting.
+The project simulates the design and implementation of a Business Intelligence system for a fictional Circus organization: Hilarity Haven Circus. It involves full lifecycle development including requirement analysis, data modeling, data generation, ETL processing, OLAP analysis, and Power BI reporting.
 
-The system enables stakeholders to analyze ticket sales, performance popularity and artist metrics through interactive dashboards.
+The system enables analysys of ticket sales, performance popularity and artist metrics through dashboards.
 
 ## The files
 ### Process Specification - Organization specifics
@@ -47,6 +47,15 @@ Inserting and loading in /Files/Warehouse/ folder:
 - ETL process (all ETL files),
 - example data: Data.sql
 - Relational_table_creation.sql - implementation of schema (and additional creation of auxiliary table (holidays)).
+
+### Analysis/visulalization
+Done in Power BI.
+Files:
+- KPI/KPI.xlsx - analysis dones in excel.
+- KPIandMDX.pdf - the overwiew document, KPI definitions.
+- visualization/ folder:
+  - visualization.pbix - interactive Power BI dashboard file
+  - visualization.pdf - showcase of example of dashboards. 
 
 ## Information
 The project implemented for Data Warehouses course.
